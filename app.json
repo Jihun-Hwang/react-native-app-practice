@@ -1,0 +1,12 @@
+{
+  "name": "mma",
+  "displayName": "mma",
+  "expo": {
+    "name": "mma",
+    "slug": "mma",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
