@@ -3,9 +3,11 @@ import React from 'react';
 import { StyleSheet, View, Button } from 'react-native';
 
 export default function App() {
+  const clickHandler = () => console.log('Clicked!');
+
   return (  // handler는 항상 함수로 처리함
     <View style={styles.container}>
-      <Button title={'click me!'} onPress={() => console.log('Clicked')} />
+      <Button title={'click me!'} onPress={clickHandler} />
       <StatusBar style="auto" />
     </View>
   );
