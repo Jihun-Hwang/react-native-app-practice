@@ -3,9 +3,13 @@ import React from 'react';
 import { StyleSheet, View, Button, Text } from 'react-native';
 
 class CounterButton extends React.Component {
-  state = {
-    counter: 0,
-  };
+  constructor(props){
+    super(props);
+
+    this.state = {   // React.Component에 state가 있음.
+      counter: props.counter,
+    };
+  }
 
   render() {
     const clickHandler = () => {
@@ -28,10 +32,10 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <CounterButton />
-        <CounterButton />
-        <CounterButton />
-        <CounterButton />
+        <CounterButton counter={0}/>
+        <CounterButton counter={10}/>
+        <CounterButton counter={100}/>
+        <CounterButton counter={50}/>
         <StatusBar style="auto" />
       </View>
     );
