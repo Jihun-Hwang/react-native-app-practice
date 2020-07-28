@@ -1,16 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Button, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default class App extends React.Component {
+  state = {
+    counter: 0,
+  };
+
+  render(){
+    const {
+      container
+    } = styles;
+
+    const clickHandler = () => {
+      this.state.counter++;
+      console.log(this.state.counter);
+    };
+
+    return (
+      <View style={styles.container}>
+        <Text>{this.state.counter}</Text>
+        <Button 
+          title={"Click me!"} 
+          onPress={clickHandler} />
+        <StatusBar style="auto" />
+      </View>
+    );
+  }
 }
 
+// StyleSheet는 css와 유사함. 자바스크립트 컨트롤
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -18,4 +37,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
 });
