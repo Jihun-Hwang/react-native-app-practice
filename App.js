@@ -3,6 +3,10 @@ import React from 'react';
 import { StyleSheet, View, Button, Text } from 'react-native';
 
 class CounterButton extends React.Component {
+  static defaultProps = {   // counter를 set하지 않으면 -1로 설정
+    counter: -1,
+  };
+
   constructor(props){
     super(props);
 
@@ -11,7 +15,7 @@ class CounterButton extends React.Component {
     };
   }
 
-  render() {
+  render() {  // 변화가 생길 때마다 실행된다고 생각(하지만 반드시 리페인트를 의미하는 것은 아님)
     const clickHandler = () => {
       this.setState({
         counter: this.state.counter + 1,
@@ -29,11 +33,11 @@ class CounterButton extends React.Component {
 }
 
 export default class App extends React.Component {
-  render() {
+  render() {  
     return (
       <View style={styles.container}>
         <CounterButton counter={0}/>
-        <CounterButton counter={10}/>
+        <CounterButton />
         <CounterButton counter={100}/>
         <CounterButton counter={50}/>
         <StatusBar style="auto" />
