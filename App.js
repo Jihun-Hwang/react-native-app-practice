@@ -1,28 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Button, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component {
-  state = {
-    counter: 0,
-  };
 
   render(){
-    const {
-      container
-    } = styles;
 
-    const clickHandler = () => {
-      this.state.counter++;
-      console.log(this.state.counter);
-    };
-
-    return (
+    return (  // handler는 항상 함수로 처리함
       <View style={styles.container}>
-        <Text>{this.state.counter}</Text>
-        <Button 
-          title={"Click me!"} 
-          onPress={clickHandler} />
+        <Text>react native 연습!</Text>
         <StatusBar style="auto" />
       </View>
     );
