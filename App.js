@@ -8,7 +8,7 @@ export default class App extends React.Component {
 
     return (  // handler는 항상 함수로 처리함
       <View style={styles.container}>
-        <Text style={styles.textBig}>react native 연습!</Text>
+        <Text style={[styles.textBig, styles.textRed]}>react native 연습!</Text>
         <StatusBar style="auto" />
       </View>
     );
@@ -25,6 +25,9 @@ const styles = StyleSheet.create({
   },
   textBig: {
     fontSize: 32,
+  },
+  textRed: {
+    color: 'red',
   },
 
 });
