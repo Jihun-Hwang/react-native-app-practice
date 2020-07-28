@@ -1,16 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View, Button, Text } from 'react-native';
+import { render } from 'react-dom';
 
-export default function App() {
-  const clickHandler = () => console.log('Clicked!');
+export default class App extends React.Component {
+  state = {
+    counter: 0,
+  };
 
-  return (  // handler는 항상 함수로 처리함
-    <View style={styles.container}>
-      <Button title={'click me!'} onPress={clickHandler} />
-      <StatusBar style="auto" />
-    </View>
-  );
+  render() {
+    const clickHandler = () => {
+      this.setState({
+        counter: this.state.counter + 1,
+      });
+    };
+
+    return (
+      <View style={styles.container}>
+          <Text>{this.state.counter}</Text>
+          <Button title={'click me!'} onPress={clickHandler}/>
+        <StatusBar style="auto" />
+      </View>
+    );
+  }
 }
 
 // StyleSheet는 css와 유사함. 자바스크립트 컨트롤
