@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, FlatList, View } from 'react-native';
+import { StyleSheet, Text, FlatList, TouchableOpacity } from 'react-native';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -25,11 +25,15 @@ export default class App extends React.Component {
       });
   }
 
+  onPressCity(item) {
+    console.log('onPressCity =', item);
+  }
+
   renderItem(city) {
     return (
-      <View style={styles.item}>
+      <TouchableOpacity style={styles.item} onPress={this.onPressCity}>
         <Text style={styles.text}>{city}</Text>
-      </View>
+      </TouchableOpacity>
     );
   }
 
