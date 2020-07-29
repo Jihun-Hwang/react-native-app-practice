@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, View, Image, Text } from 'react-native';
+import { StyleSheet, Image, Text, ScrollView } from 'react-native';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -8,43 +8,45 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export default class App extends React.Component {
   render() {  
     return (
-      <SafeAreaView style={styles.fullscreen}>
-        <Text style={{fontSize:96}}>Scroll me plz</Text>
-        <Image source={{
-            uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
-            width: 128,
-            height: 128,
-          }} />
-        <Text style={{fontSize:96}}>Scroll me plz</Text>
-        <Image source={{
-            uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
-            width: 128,
-            height: 128,
-          }} />
-        <Text style={{fontSize:96}}>Scroll me plz</Text>
-        <Image source={{
-            uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
-            width: 128,
-            height: 128,
-          }} />
-        <Text style={{fontSize:96}}>Scroll me plz</Text>
-        <Image source={{
-            uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
-            width: 128,
-            height: 128,
-          }} />
-        <Text style={{fontSize:96}}>Scroll me plz</Text>
-        <Image source={{
-            uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
-            width: 128,
-            height: 128,
-          }} />
-        <Text style={{fontSize:96}}>Scroll me plz</Text>
-        <Image source={{
-            uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
-            width: 128,
-            height: 128,
-          }} />
+      <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.container}>
+          <Text style={{fontSize:96}}>Scroll me plz</Text>
+          <Image source={{
+              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
+              width: 128,
+              height: 128,
+            }} />
+          <Text style={{fontSize:96}}>Scroll me plz</Text>
+          <Image source={{
+              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
+              width: 128,
+              height: 128,
+            }} />
+          <Text style={{fontSize:96}}>Scroll me plz</Text>
+          <Image source={{
+              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
+              width: 128,
+              height: 128,
+            }} />
+          <Text style={{fontSize:96}}>Scroll me plz</Text>
+          <Image source={{
+              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
+              width: 128,
+              height: 128,
+            }} />
+          <Text style={{fontSize:96}}>Scroll me plz</Text>
+          <Image source={{
+              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
+              width: 128,
+              height: 128,
+            }} />
+          <Text style={{fontSize:96}}>Scroll me plz</Text>
+          <Image source={{
+              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
+              width: 128,
+              height: 128,
+            }} />
+        </ScrollView>
         <StatusBar style="auto" />
       </SafeAreaView>
     );
@@ -53,11 +55,7 @@ export default class App extends React.Component {
 
 // StyleSheet는 css와 유사함. 자바스크립트 컨트롤
 const styles = StyleSheet.create({
-  fullscreen: {
+  container: {
     flex: 1,
-    backgroundColor: '#fff',
-    borderColor: 'red',
-    borderWidth: 2,
-    alignItems: 'center',
   },
 });
