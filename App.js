@@ -6,16 +6,29 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 // aftera
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      cities: [],
+    };
+  }
+
   componentDidMount() {  // rendering이 모두 준비 되었을 때.
     fetch('https://raw.githubusercontent.com/example0312/weather-crawler/master/availableCityNames')
       .then(response => response.json())
-      .then(console.log);
+      .then(cities => {
+        console.log('cities =', cities.length);
+        this.setState({
+          cities
+        });
+      });
   }
 
-  renderItem({ name }) {
+  renderItem(city) {
     return (
       <View style={styles.item}>
-        <Text style={styles.text}>{name}</Text>
+        <Text style={styles.text}>{city}</Text>
       </View>
     );
   }
@@ -24,9 +37,9 @@ export default class App extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <FlatList style={styles.container}
-          keyExtractor={(item) => item.name}
+          keyExtractor={(item) => item}
           renderItem={({ item }) => this.renderItem(item)}
-          data={this.fruits}
+          data={this.state.cities}
         />
         <StatusBar style="auto" />
       </SafeAreaView>
